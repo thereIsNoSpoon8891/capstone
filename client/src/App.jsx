@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import UserLocW from '../compenents/UserLocW'
+import UserLocW from '../components/UserLocW'
 function App() {
 
 

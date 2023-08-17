@@ -8,7 +8,7 @@ const Day = props => {
 const {astro, date, daily} = props
 //console.log(astro)
 //console.log(date)
-console.log(daily)
+//console.log(daily)
     return(
         <div className="day--container">
             <p>Date:{date}</p>

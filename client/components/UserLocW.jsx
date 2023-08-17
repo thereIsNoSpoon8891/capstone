@@ -20,7 +20,7 @@ const getUserLocation = () => {
                 const lon = position.coords.longitude
                     axios.get(`https://us1.locationiq.com/v1/reverse.php?key=${G_KEY}&lat=${lat}&lon=${lon}&format=json`)
                         .then(response => {
-                            //console.log(response.data) location object
+                            //console.log(response.data) //location object
                             if (response.data.address && response.data.address.postcode) {
                                 setLocation(response.data.address)
                             } else {

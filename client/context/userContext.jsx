@@ -3,12 +3,23 @@ import axios from "axios";
 
 const UserContext = createContext()
 
-const UserContextProvider = () => {
+const UserContextProvider = props => {
+    const {children} = props
     
-    
-    return(
-        <UserContext.Provider>
+    const [user, setUser] = useState({
+        user: {},
+        token: ""
+    })
 
+    
+
+    return(
+        <UserContext.Provider
+        value={{
+            user
+        }}
+        >
+            {children}
         </UserContext.Provider>
     )
 }
