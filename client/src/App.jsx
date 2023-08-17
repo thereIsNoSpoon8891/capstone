@@ -1,11 +1,11 @@
 import { useState } from 'react'
-import Profile from '../compenents/Profile'
+import UserLocW from '../compenents/UserLocW'
 function App() {
 
 
   return (
     <>
-    <Profile />
+    <UserLocW/>
     </>
   )
 }
