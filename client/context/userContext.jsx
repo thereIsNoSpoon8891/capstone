@@ -7,16 +7,57 @@ const UserContextProvider = props => {
     const {children} = props
     
     const [user, setUser] = useState({
-        user: {},
-        token: ""
+        user: JSON.parse(localStorage.getItem("user")) || {},
+        token: localStorage.getItem("token") || "",
+        errorMessage: ""
     })
 
-    
+    const signUp = credentials => {
+        axios.post(`/api/auth/signup`, credentials)
+            .then(res => {
+                const {user, token} = res.data
+                    localStorage.setItem("user", JSON.stringify(user))
+                        localStorage.setItem("token", token)//set user
+                            setUser(prevUser => ({
+                                ...prevUser,
+                                user,
+                                token
+                            }))
+            })
+            .catch(err => console.log(err.response.data.errorMessage))
+    }
+
+    const login = credentials => {
+        axios.post(`/api/auth/login`, credentials)
+            .then(res => {
+                const {user, token} = res.data
+                    localStorage.setItem("user", JSON.stringify(user))
+                        localStorage.setItem("token", token)
+                            setUser(prevUser => ({
+                                ...prevUser,
+                                user,
+                                token
+                            }))
+            })
+            .catch(err => console.log(err.response.data.errorMessage))
+    }
+
+    const logout = () => {
+        localStorage.removeItem("token")
+        localStorage.removeItem("user")
+        setUser({
+            user: {},
+            token: ""
+        })
+    }
 
     return(
         <UserContext.Provider
         value={{
-            user
+            ...user,
+            signUp,
+            login,
+            logout
         }}
         >
             {children}
