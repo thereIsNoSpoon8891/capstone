@@ -24,7 +24,7 @@ const UserContextProvider = props => {
                                 token
                             }))
             })
-            .catch(err => console.log(err.response.data.errorMessage))
+            .catch(err => handleError(err.response.data.errorMessage))
     }
 
     const login = credentials => {
@@ -39,7 +39,7 @@ const UserContextProvider = props => {
                                 token
                             }))
             })
-            .catch(err => console.log(err.response.data.errorMessage))
+            .catch(err => handleError(err.response.data.errorMessage))
     }
 
     const logout = () => {
@@ -51,13 +51,28 @@ const UserContextProvider = props => {
         })
     }
 
+    const handleError = err => {
+        setUser(prevUser => ({
+            ...prevUser,
+            errorMessage: err
+        }))
+    }
+
+    const resetError = () => {
+        setUser(prevUser => ({
+            ...prevUser,
+            errorMessage: ""
+        }))
+    }
+
     return(
         <UserContext.Provider
         value={{
             ...user,
             signUp,
             login,
-            logout
+            logout,
+            resetError
         }}
         >
             {children}

@@ -10,7 +10,7 @@ authRouter.route("/signup")
         .then(user => {
             if(user){
                 res.status(403)
-                    return next(new Error(`The User Name ${user} already exists.`))
+                    return next(new Error(`The User Name ${user.username} already exists.`))
             } else if(!user){
                 const newUser = new User(req.body)
                     req.body.username.toLowerCase()
