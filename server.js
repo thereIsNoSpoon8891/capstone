@@ -18,7 +18,7 @@ mongoose.connect(process.env.MONGO_URI)
 // Routes
 app.use("/api/auth", require('./routes/authRoute'))
 app.use("/api/auth", expressjwt({secret: process.env.SECRET, algorithms:['HS256'] }))
-
+app.use("/api/auth/locations", require('./routes/locationRoute'))
 
 
 
