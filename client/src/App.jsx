@@ -5,6 +5,7 @@ import Profile from '../components/Profile'
 import Auth from '../components/Auth'
 import Header from '../components/Header'
 import Search from '../components/Search'
+import SavedLoc from '../components/SavedLoc'
 
 function App() {
 
@@ -17,6 +18,7 @@ const {token} = useContext(UserContext)
         <Route path="/" element={<Auth />}/>
         <Route path='/profile' element={<Profile />} />
         <Route path='/search' element={<Search />} />
+        <Route path='/saved' element={<SavedLoc />} />
       </Routes>
 
 

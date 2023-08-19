@@ -13,12 +13,17 @@ const { logout, token } = useContext(UserContext)
             <div className="nav--container">
                 <Link to='/profile'>
                     <h1>
-                        My Weather
+                        Local Weather
                     </h1>
                 </Link>
                 <Link to='/search' >
                     <h1>
-                        My Locations
+                        Search
+                    </h1>
+                </Link>
+                <Link to="/saved" >
+                    <h1>
+                        My locations
                     </h1>
                 </Link>
 
