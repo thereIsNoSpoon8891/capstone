@@ -5,15 +5,14 @@ const Schema = mongoose.Schema;
 
 
 const locationSchema = new Schema({
-    city:{
+    location:{
         type: String,
         required: true,
     },
-    state:{
-        type: String,
-    },
-    zip:{
-        type: Number
+    user:{
+        type: Schema.Types.ObjectId,
+        ref: "User",
+        required: true
     }
 });
 
