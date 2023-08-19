@@ -46,6 +46,7 @@ const Auth = () => {
     const handleLogin = e => {
         e.preventDefault()
             login(inputs)
+                setInputs(defaultInputs)
     }
 
     const toggleForms = () => {

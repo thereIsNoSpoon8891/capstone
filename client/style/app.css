@@ -2,3 +2,8 @@
     border: solid black 3px;
     margin: 5px;
 }
+
+.nav--container{
+    display: flex;
+    justify-content: space-around;
+}

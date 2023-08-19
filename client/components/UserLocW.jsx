@@ -56,7 +56,7 @@ const dayElements = forecast.map(day =>(
 //console.log(currentWeather)
 //console.log(forecast)
     return(
-        <div>
+        <div className="loc--button--container">
             <div>
 
                 {
@@ -72,7 +72,7 @@ const dayElements = forecast.map(day =>(
             </div>
 
             {location &&
-            <div>
+            <div className="current--container">
                 <p>Condition: {currentWeather.condition?.text}</p>
                 <p>Temperature: {currentWeather.temp_f}</p>
                 <p>Feels Like: {currentWeather.feelslike_f}</p>

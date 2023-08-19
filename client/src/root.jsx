@@ -7,10 +7,10 @@ import '../style/app.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-      <Router>
+    <Router>
           <UserContextProvider>
               <App />
           </UserContextProvider>
-      </Router>
+    </Router>
   </React.StrictMode>
 )

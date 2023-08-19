@@ -6,7 +6,7 @@ import { useState } from "react"
 
 
 
-const Card = () => {
+const WeatherCard = props => {
 
 
     return(
@@ -15,4 +15,4 @@ const Card = () => {
     )
 }
 
-export default Card
+export default WeatherCard
