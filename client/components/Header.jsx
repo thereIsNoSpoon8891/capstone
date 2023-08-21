@@ -9,7 +9,7 @@ const Header = () => {
 const {user} = useContext(UserContext)
 
     return(
-        <div>
+        <div className="header--container">
             <h1 className="header--welcome">
               Weather or Not 
             </h1>

@@ -62,25 +62,27 @@ const dayElements = forecast.map(day =>(
                 {
                     toggleState && 
                  <div>
-                     {location ? <p>{location.city}, {location.state}, {location.postcode}</p> : <p>Locating...</p>} 
+                     {location ? <p className='location'>{location.city}, {location.state}, {location.postcode}</p> : <p>Locating...</p>} 
                  </div> 
                 }
 
-                <button onClick={getUserLocation}>
-                    Use my location.
+                <button
+                className="get-loc-button"
+                onClick={getUserLocation}>
+                    Use my location
                 </button>
             </div>
 
             {location &&
             <div className="current--container">
-                <p>Condition: {currentWeather.condition?.text}</p>
-                <p>Temperature: {currentWeather.temp_f}</p>
-                <p>Feels Like: {currentWeather.feelslike_f}</p>
-                <p>UV Index: {currentWeather.uv}</p>
-                <p>Wind Speed:{currentWeather.wind_mph}</p>
-                <p>Wind Direction: {currentWeather.wind_dir}</p>
-                <p>Cloud Coverage: %{currentWeather.cloud}</p>
-                <img width={150} src={currentWeather.condition?.icon}/>
+                <p className="condition"> {currentWeather.condition?.text}</p>
+                <p className="temp">Temperature: {currentWeather.temp_f}</p>
+                <p className="feel-temp">Feels Like: {currentWeather.feelslike_f}</p>
+                <p className="uv">UV Index: {currentWeather.uv}</p>
+                <p className="wind-speed">Wind Speed:{currentWeather.wind_mph}</p>
+                <p className="wind-dir">Wind Direction: {currentWeather.wind_dir}</p>
+                <p className="cloud">Cloud Coverage: %{currentWeather.cloud}</p>
+                <img className="icon" width={150} src={currentWeather.condition?.icon}/>
             </div>}
                 {dayElements}
         </div>

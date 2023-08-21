@@ -79,7 +79,7 @@ const Auth = () => {
     console.log(randomCity)
    return (
     <>
-   <div>
+   <div className="login-page--container">
         {toggleForm ?
         <form 
         className="auth--container">
@@ -118,7 +118,9 @@ const Auth = () => {
 
         </form>
     :
-    <form>
+    <form
+    className="auth--container"
+    >
             <h1>Login</h1>
             <input
             className="inputs"
@@ -152,7 +154,7 @@ const Auth = () => {
 }
     {inputs.errorMessage || user.errorMessage ? <p>{inputs.errorMessage || user.errorMessage}</p> : ""}
     </div>
-    <div>
+    <div className="rando-city-container">
         <h1>
             {randomCity.location?.name}, {randomCity.location?.region}
         </h1>

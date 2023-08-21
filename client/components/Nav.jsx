@@ -27,8 +27,8 @@ const { logout, token } = useContext(UserContext)
                     </h1>
                 </Link>
 
-                    <button onClick={logout} >
-                        Log Out
+                    <button className='log-out-button' onClick={logout} >
+                        LOG OUT
                     </button>
             </div>
         </>

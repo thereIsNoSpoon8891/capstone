@@ -7,6 +7,7 @@ import Header from '../components/Header'
 import Search from '../components/Search'
 import SavedLoc from '../components/SavedLoc'
 import LocDetails from '../components/LocDetails'
+import ProtectedRoutes from '../components/ProtectedRoutes'
 
 function App() {
 
@@ -14,16 +15,43 @@ const {token} = useContext(UserContext)
 
   return (
     <>
-    <Header />
+    {token && <Header />}
+
       <Routes>
-        <Route path="/" element={<Auth />}/>
-        <Route path='/profile' element={<Profile />} />
-        <Route path='/search' element={<Search />} />
-        <Route path='/saved' element={<SavedLoc />} />
-        <Route path='/forecast/:location' element={<LocDetails />} />
+        <Route path="/" element={token ? <Profile /> : <Auth />}/>
+
+        <Route path='/profile' element={
+          <ProtectedRoutes
+          token={token}
+          >
+              <Profile />
+          </ProtectedRoutes>
+        
+        } />
+        <Route path='/search' element={
+          <ProtectedRoutes
+          token={token}
+          >
+              <Search />
+          </ProtectedRoutes>
+        } />
+
+        <Route path='/saved' element={
+          <ProtectedRoutes
+          token={token}
+          >
+              <SavedLoc />
+          </ProtectedRoutes>
+        } />
+
+        <Route path='/forecast/:location' element={
+          <ProtectedRoutes
+          token={token}
+          >
+              <LocDetails />
+          </ProtectedRoutes>
+        } />
       </Routes>
-
-
     </>
   )
 }

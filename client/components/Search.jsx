@@ -66,7 +66,7 @@ const Search = () => {
 //console.log(weather)
     return(
         <div>
-            <form>
+            <form className='search-form'>
                 <input
                 type='text'
                 name='location'
@@ -76,6 +76,7 @@ const Search = () => {
                 className='search--location-input'
                 />
                 <button
+                className='find-button'
                 onClick={findWeather}
                 >
                     Find Weather
@@ -83,15 +84,18 @@ const Search = () => {
             </form>
             {weather && 
             <div className="current--container">
-                <p>Condition: {weather.condition?.text}</p>
-                <p>Temperature: {weather.temp_f}</p>
-                <p>Feels Like: {weather.feelslike_f}</p>
-                <p>UV Index: {weather.uv}</p>
-                <p>Wind Speed:{weather.wind_mph}</p>
-                <p>Wind Direction: {weather.wind_dir}</p>
-                <p>Cloud Coverage: %{weather.cloud}</p>
-                <img width={150} src={weather.condition?.icon}/>
-                <button onClick={handleSubmit} >
+                <p className='location'>{location.location}</p>
+                <p className="condition">{weather.condition?.text}</p>
+                <p className="temp"> Temperature: {weather.temp_f}</p>
+                <p className="feel-temp">Feels Like: {weather.feelslike_f}</p>
+                <p className="uv">UV Index: {weather.uv}</p>
+                <p className="wind-speed">Wind Speed:{weather.wind_mph}</p>
+                <p className="wind-dir">Wind Direction: {weather.wind_dir}</p>
+                <p className="cloud">Cloud Coverage: %{weather.cloud}</p>
+                <img className="icon" width={150} src={weather.condition?.icon}/>
+                <button
+                className='save-button'
+                 onClick={handleSubmit} >
                     Save To 'My Locations'
                 </button>
             </div>
