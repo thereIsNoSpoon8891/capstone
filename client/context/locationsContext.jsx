@@ -16,18 +16,37 @@ const LocationsContextProvider = props => {
 
     const {children} = props
 
-    const [userLoc, setUserLoc] = useState({})
+    const [userLoc, setUserLoc] = useState([])
 
+    
     const postLocation = location => {
-        iAxios.post(`/api/auth/locations`, location)
+        iAxios.post("/api/auth/locations", location)
             .then(res => console.log(res))
+            .catch(err => console.log(err))
+    }
+
+    const getUserLocs = () => {
+        iAxios.get("/api/auth/locations")
+            .then(res => setUserLoc(res.data))
+            .catch(err => console.log(err))
+    }
+
+    const deleteLoc = id => {
+        iAxios.delete(`/api/auth/locations/${id}`)
+            .then(res => {
+                console.log(res)
+                getUserLocs()
+            })
             .catch(err => console.log(err))
     }
 
     return(
         <LocationsContext.Provider
         value={{
-            postLocation
+            postLocation,
+            getUserLocs,
+            deleteLoc,
+            userLoc
         }}
         >
             {children}

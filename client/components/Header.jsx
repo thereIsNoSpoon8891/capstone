@@ -11,8 +11,9 @@ const {user} = useContext(UserContext)
     return(
         <div>
             <h1 className="header--welcome">
-            {user?.username}, Welcome to Weather or not. 
+              Weather or Not 
             </h1>
+            <h3>Logged in as {user.username}</h3>
             <Nav />
         </div>
     )
