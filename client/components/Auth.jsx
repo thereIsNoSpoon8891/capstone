@@ -1,4 +1,4 @@
-import { useState, useEffect,useContext } from "react"
+import { useState, useEffect, useContext, useRef } from "react"
 import { UserContext } from "../context/userContext"
 import axios from 'axios'
 
@@ -20,7 +20,9 @@ const Auth = () => {
 
     const [randomCity, setRandomCity] = useState("")
 
-    const {signUp, login, resetError, ...user} = useContext(UserContext)
+    const timer = useRef()
+
+    const {signUp, login, resetError, token, ...user} = useContext(UserContext)
 
     const handleChange = e => {
         const {name, value} = e.target
@@ -64,19 +66,28 @@ const Auth = () => {
     
     const randomWeather = () => {
         const W_API_KEY = import.meta.env.VITE_WEATHER_KEY
-            const cities = ['paris', 'new york', 'phoenix', 'dallas', 'seattle']
+            const cities = ['paris', 'new york', 'phoenix', 'dallas', 'seattle', 'miami',
+             'cleveland', 'long beach', 'salt lake city', 'anchorage', 'honolulu']
             let city = cities[Math.floor(Math.random() * cities.length)]
                 axios.get(`http://api.weatherapi.com/v1/current.json?key=${W_API_KEY}&q=${city}`)
                     .then(res => setRandomCity(res.data))
                     .catch(err => console.log(err))
     }
 
+    const cleanUp = () => {
+        clearInterval(timer.current)
+    }
+
     useEffect(() => {
-        randomWeather()
+
+        timer.current = setInterval(randomWeather, 5000);
+
+        return cleanUp
+
     }, [])
     //console.log(inputs)
     //console.log(user.errorMessage)
-    console.log(randomCity)
+    //console.log(randomCity)
    return (
     <>
    <div className="login-page--container">
@@ -154,7 +165,7 @@ const Auth = () => {
 }
     {inputs.errorMessage || user.errorMessage ? <p>{inputs.errorMessage || user.errorMessage}</p> : ""}
     </div>
-    <div className="rando-city-container">
+    {randomCity ? <div className="rando-city-container">
         <h1>
             {randomCity.location?.name}, {randomCity.location?.region}
         </h1>
@@ -169,6 +180,13 @@ const Auth = () => {
            Feels like... {randomCity.current?.feelslike_f}&deg;F
         </p>
     </div>
+    :
+    <div className="rando-city-container">
+        <p>
+        Loading some weather...
+        </p>
+    </div>
+    }
 </>
 
     )

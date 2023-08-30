@@ -84,7 +84,7 @@ const Search = () => {
             </form>
             {weather && 
             <div className="current--container">
-                <p className='location'>{location.location}</p>
+                <p className='location'>Now</p>
                 <p className="condition">{weather.condition?.text}</p>
                 <p className="temp"> Temperature: {weather.temp_f}</p>
                 <p className="feel-temp">Feels Like: {weather.feelslike_f}</p>

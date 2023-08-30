@@ -10,7 +10,7 @@ const { logout, token } = useContext(UserContext)
     return(
         <>
 
-            <div className="nav--container">
+            <div className="nav--container" id='nav'>
                 <Link to='/profile'>
                     <h1>
                         Local Weather
