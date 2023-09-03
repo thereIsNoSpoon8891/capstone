@@ -6,11 +6,11 @@ require('dotenv').config()
 const app = express()
 const path = require("path")
 
-const directory = path.join(__dirname, "capstone", "client", "build")//add dir name
+
 
 app.use(express.json())
 app.use(morgan('dev'))
-app.use(express.static(directory))
+app.use(express.static(path.join(__dirname, 'dist')))
 // Connect to the db
 mongoose.connect(process.env.MONGO_URI)
     .then(() => console.log(`Connected to the Weather-or-not DB`))
@@ -34,7 +34,7 @@ app.use((err, req, res, next) => {
 })
 
 app.get("*", (req, res) => {
-    res.sendFile(path.join(directory, "index.html"));
+    res.sendFile(path.join(__dirname, 'dist/index.html'));
 });
 
 app.listen(9000, () => {
