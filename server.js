@@ -4,11 +4,11 @@ const mongoose = require('mongoose')
 const { expressjwt } = require('express-jwt')
 require('dotenv').config()
 const app = express()
-
+const path = require("path")
 
 app.use(express.json())
 app.use(morgan('dev'))
-
+app.use(express.static(path.join(__dirname, "client", "build")))
 // Connect to the db
 mongoose.connect(process.env.MONGO_URI)
     .then(() => console.log(`Connected to the Weather-or-not DB`))
@@ -31,6 +31,9 @@ app.use((err, req, res, next) => {
     return res.send({errorMessage: err.message })
 })
 
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+});
 
 app.listen(9000, () => {
     console.log(`API listening on port 9000`)
