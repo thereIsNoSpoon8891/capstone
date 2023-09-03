@@ -8,7 +8,7 @@ const path = require("path")
 
 app.use(express.json())
 app.use(morgan('dev'))
-app.use(express.static(path.join(__dirname, "client", "build")))
+app.use(express.static(path.join(capstone, "client", "build")))
 // Connect to the db
 mongoose.connect(process.env.MONGO_URI)
     .then(() => console.log(`Connected to the Weather-or-not DB`))
@@ -32,7 +32,7 @@ app.use((err, req, res, next) => {
 })
 
 app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+    res.sendFile(path.join(captone, "client", "build", "index.html"));
 });
 
 app.listen(9000, () => {
