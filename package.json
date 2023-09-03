@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "vite",
     "build": "vite build",
     "serve": "node server.js",
-    "start": "vite build && node server.js",
-    "dev": "vite"
+    "start": "vite build && node server.js"
   },
   "keywords": [],
   "author": "",
