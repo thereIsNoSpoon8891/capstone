@@ -6,7 +6,8 @@
   "scripts": {
     "build": "vite build",
     "serve": "node server.js",
-    "start": "vite build && node server.js"
+    "start": "vite build && node server.js",
+    "dev": "vite"
   },
   "keywords": [],
   "author": "",
