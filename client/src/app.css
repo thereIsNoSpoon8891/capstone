@@ -261,7 +261,10 @@ button{
     width: 320px;
     font-size: 30px;
     margin-top: 10px;
+}
 
+.error-message{
+    color: red;
 }
 
 }
@@ -340,9 +343,12 @@ button{
         text-align: center;
         display: flex;
         flex-direction: column;
-        width: 400px;
+        width: auto;
     }
     
+    .auth--container h1 {
+        font-size: 60px;
+    }
     .login-page--container{
         display: flex;
         flex-direction: column;
@@ -407,7 +413,7 @@ button{
         font-size: 20px;
         width: fit-content;
         background: rgb(199, 57, 57);
-        grid-column: 6/7;
+        grid-column: 4/5;
         grid-row: 3/4;
         margin: auto;
     }
@@ -418,7 +424,14 @@ button{
     
     .header--welcome{
         height: 20px;
-        font-size: 50px;
+        font-size: 40px;
+        padding: 10%;
+    }
+
+    .header--welcome h3 {
+        display: flex;
+        padding: 20%;
+        align-items: center;
     }
     
     .header--container h3 {
@@ -445,7 +458,7 @@ button{
         margin: 5px;
         background: rgb(183, 219, 251);
         display: grid;
-        grid-template-columns: repeat(6, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         grid-template-rows: repeat(3, 1fr);
     
     }
@@ -475,10 +488,11 @@ button{
     
     .current--container h3 {
         text-transform:uppercase;
-        grid-column: 3/5;
+        grid-column: 1/2;
         grid-row: 1/2 ;
         margin: auto;
-        font-size: 30px;
+        font-size: 15px;
+        text-align: center;
     }
     
     .current--container{
@@ -486,6 +500,7 @@ button{
         border-radius: 10px;
         background: rgb(183, 219, 251);
         display: grid;
+        gap: 5px;
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: repeat(3, 1fr);
         margin: 2px;
@@ -504,7 +519,7 @@ button{
         grid-row: 1/2;
         grid-column: 1/2;
         margin: auto;
-        font-size: 20px;
+        font-size: 15px;
         text-transform: uppercase;
     }
     
@@ -526,6 +541,7 @@ button{
         grid-row: 2/3 ;
         margin: auto;
         font-size: 15px;
+        text-align: center;
     }
     
     .uv{
@@ -541,7 +557,7 @@ button{
         grid-row: 2/3 ;
         margin: auto;
         font-size: 15px;
-        
+        text-align: center;
     }
     
     .wind-dir{
@@ -549,11 +565,13 @@ button{
         grid-row: 2/3;
         margin: auto;
         font-size: 15px;
+        text-align: center;
     }
     
     .temp{
         grid-column: 3/4;
         grid-row:1/2 ;
+        text-align: center;
         margin: auto;
         font-size: 15px;
     }
@@ -563,13 +581,15 @@ button{
         grid-row: 1/2 ;
         margin: auto;
         font-size: 15px;
+        text-align: center;
     }
     
     .condition{
         grid-column: 2/3 ;
         grid-row:  1/2 ;
+        text-align: center;
         margin: auto;
-        font-size: 20px;
+        font-size: 15px;
     }
     
     .search-form{
@@ -580,8 +600,8 @@ button{
     }
     
     .search--location-input{
-        height: 50px;
-        width: 300px;
+        height: 40px;
+        width: 60%;
         font-size: 30px;
         color: rgba(10, 10, 10);
     
@@ -589,14 +609,18 @@ button{
     .search--location-input::placeholder{
         height: 50px;
         width: 300px;
-        font-size: 30px;
+        font-size: 20px;
         color: rgba(10, 10, 10, 0.311);
     }
     .find-button{
         height: 50px;
-        width: 320px;
-        font-size: 30px;
+        width: 60%;
+        font-size: 25px;
         margin-top: 10px;
     
+    }
+
+    .error-message{
+        color: red;
     }
 }

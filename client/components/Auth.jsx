@@ -159,11 +159,11 @@ const Auth = () => {
         </form>    
     }
     {toggleForm ?
-    <p>Already a member? Click <u onClick={toggleForms}>here</u> to Log in.</p>
+    <p>Have an account? Click <u onClick={toggleForms}>here</u> to Log in.</p>
     :
-    <p>Not a memeber? Click <u onClick={toggleForms}>here</u> to Create a Account.</p>
+    <p>Need an account? Click <u onClick={toggleForms}>here</u> to make one.</p>
 }
-    {inputs.errorMessage || user.errorMessage ? <p>{inputs.errorMessage || user.errorMessage}</p> : ""}
+    {inputs.errorMessage || user.errorMessage ? <p className="error-message">{inputs.errorMessage || user.errorMessage}</p> : ""}
     </div>
     {randomCity ? <div className="rando-city-container">
         <h1>
