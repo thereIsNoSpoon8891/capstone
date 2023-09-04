@@ -57,7 +57,6 @@ button{
     height: 80px;
     width: 160px;
     font-size: 20px;
-
 }
 
 .log-out-button:hover{
@@ -96,10 +95,14 @@ button{
     text-shadow: 4px 4px 2px rgba(0,0,0,0.6);
 }
 
-.header--container h3 {
+.name-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 30px;
+}
+.name{
     text-transform: capitalize;
-    text-align: right;
-    margin-right: 100px;
 }
 
 .header--container h1{
@@ -120,7 +123,7 @@ button{
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(3, 1fr);
-
+    
 }
 
 .nav--container{
@@ -384,12 +387,10 @@ button{
     }
     
     
-    
-    .log-out-button{
-        height: 80px;
-        width: 160px;
+    .nav--container .log-out-button{
         font-size: 12px;
     }
+
     
     .log-out-button:hover{
         background-color: rgba(0, 0, 255, 0.535);
@@ -427,19 +428,15 @@ button{
         padding: 10%;
     }
 
-    .header--welcome h3 {
+    .name-container{
         display: flex;
-        padding: 20%;
+        flex-direction: column;
         align-items: center;
     }
-    
-    .header--container h3 {
+    .name{
         text-transform: capitalize;
-        text-align: right;
-        margin-right: 100px;
-        margin-top: 10px;
-        font-size: 20px;
     }
+    
     
     .header--container h1{
         color: blue;
@@ -459,7 +456,7 @@ button{
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: repeat(3, 1fr);
-    
+        column-gap: 3px;
     }
 
     #nav{
@@ -519,8 +516,9 @@ button{
         grid-row: 1/2;
         grid-column: 1/2;
         margin: auto;
-        font-size: 15px;
+        font-size: 12px;
         text-transform: uppercase;
+        padding-bottom: 5px;
     }
     
     .current--container a{
@@ -572,7 +570,7 @@ button{
         grid-column: 3/4;
         grid-row:1/2 ;
         text-align: center;
-        margin: auto;
+        margin:auto;
         font-size: 15px;
     }
     

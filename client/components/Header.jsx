@@ -13,7 +13,7 @@ const {user} = useContext(UserContext)
             <h1 className="header--welcome">
               Weather or Not 
             </h1>
-            <h3>Logged in as {user.username}</h3>
+            <span className="name-container">Logged in as <span className="name">{user.username}</span></span>
             <Nav />
         </div>
     )
