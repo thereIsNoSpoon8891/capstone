@@ -270,6 +270,10 @@ button{
     color: red;
 }
 
+.high{
+    display: none;
+}
+
 }
 /* ******************************************************************************************** */
 /* ******************************************************************************************** */
@@ -388,7 +392,7 @@ button{
     
     
     .nav--container .log-out-button{
-        font-size: 12px;
+        font-size: 10px;
     }
 
     
@@ -456,7 +460,7 @@ button{
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: repeat(3, 1fr);
-        column-gap: 3px;
+        column-gap: 4px;
     }
 
     #nav{
@@ -559,6 +563,14 @@ button{
     }
     
     .wind-dir{
+        grid-column: 4/5 ;
+        grid-row: 2/3;
+        margin: auto;
+        font-size: 15px;
+        text-align: center;
+    }
+
+    .high{
         grid-column: 3/4 ;
         grid-row: 2/3;
         margin: auto;
