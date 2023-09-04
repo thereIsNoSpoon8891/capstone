@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "vite",
-    "build": "npm run build",
-    "serve": "node server.js",
+    "build": "vite build",
+    "serve": "vite preview",
     "start": "vite build && node server.js"
   },
   "keywords": [],
@@ -22,6 +22,9 @@
     "mongodb": "^5.7.0",
     "mongoose": "^7.4.3",
     "morgan": "^1.10.0",
+    "vite": "^4.4.9"
+  },
+  "devDependencies": {
     "vite": "^4.4.9"
   }
 }
