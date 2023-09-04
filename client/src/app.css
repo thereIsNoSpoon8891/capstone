@@ -388,7 +388,7 @@ button{
     .log-out-button{
         height: 80px;
         width: 160px;
-        font-size: 15px;
+        font-size: 12px;
     }
     
     .log-out-button:hover{
