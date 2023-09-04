@@ -19,7 +19,7 @@ const WeatherCard = props => {
     const W_API_KEY = import.meta.env.VITE_WEATHER_KEY
 
         if (location) {
-            axios.get(`http://api.weatherapi.com/v1/current.json?key=${W_API_KEY}&q=${location}`)
+            axios.get(`https://api.weatherapi.com/v1/current.json?key=${W_API_KEY}&q=${location}`)
                 .then(res => setCurentWeather(res.data.current))
                 .catch(err => console.log(`Error: ${err}`))
         }
