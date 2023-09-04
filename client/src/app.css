@@ -388,8 +388,7 @@ button{
     .log-out-button{
         height: 80px;
         width: 160px;
-        font-size: 20px;
-    
+        font-size: 15px;
     }
     
     .log-out-button:hover{
@@ -511,8 +510,9 @@ button{
         grid-row: 3/4;
         grid-column: 6/7;
         width: auto;
-        height: 100px;
+        height: 80px;
         font-size: 20px;
+        padding: 2px;
     }
     
     .location{
@@ -602,7 +602,7 @@ button{
     .search--location-input{
         height: 40px;
         width: 60%;
-        font-size: 30px;
+        font-size: 20px;
         color: rgba(10, 10, 10);
     
     }
