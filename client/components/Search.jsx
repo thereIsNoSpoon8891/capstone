@@ -41,11 +41,11 @@ const Search = () => {
 
     const W_API_KEY = import.meta.env.VITE_WEATHER_KEY
 
-        axios.get(`http://api.weatherapi.com/v1/current.json?key=${W_API_KEY}&q=${location.location}`)
+        axios.get(`https://api.weatherapi.com/v1/current.json?key=${W_API_KEY}&q=${location.location}`)
             .then(res => setWeather(res.data.current))
             .catch(err => setError(`Error: ${err}`))
 
-        axios.get(`http://api.weatherapi.com/v1/forecast.json?key=${W_API_KEY}&q=${location.location}&days=5`)
+        axios.get(`https://api.weatherapi.com/v1/forecast.json?key=${W_API_KEY}&q=${location.location}&days=5`)
             .then(res => setForecast(res.data.forecast.forecastday))
             .catch(err => setError(`Error: ${err}`))
 

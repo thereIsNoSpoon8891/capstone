@@ -12,7 +12,7 @@ const LocDetails = () => {
 
     useEffect(() => {
     const W_API_KEY = import.meta.env.VITE_WEATHER_KEY
-        axios.get(`http://api.weatherapi.com/v1/forecast.json?key=${W_API_KEY}&q=${param.location}&days=5`)
+        axios.get(`https://api.weatherapi.com/v1/forecast.json?key=${W_API_KEY}&q=${param.location}&days=5`)
             .then(res => setForecast(res.data.forecast.forecastday))
             .catch(err => console.log(`Error: ${err}`))
 

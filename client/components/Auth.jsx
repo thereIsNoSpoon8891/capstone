@@ -69,7 +69,7 @@ const Auth = () => {
             const cities = ['paris', 'new york', 'phoenix', 'dallas', 'seattle', 'miami',
              'cleveland', 'long beach', 'salt lake city', 'anchorage', 'honolulu']
             let city = cities[Math.floor(Math.random() * cities.length)]
-                axios.get(`http://api.weatherapi.com/v1/current.json?key=${W_API_KEY}&q=${city}`)
+                axios.get(`https://api.weatherapi.com/v1/current.json?key=${W_API_KEY}&q=${city}`)
                     .then(res => setRandomCity(res.data))
                     .catch(err => console.log(err))
     }

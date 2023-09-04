@@ -36,11 +36,11 @@ useEffect(() => {
     const W_API_KEY = import.meta.env.VITE_WEATHER_KEY
     if(location){
         // current weather by location
-    axios.get(`http://api.weatherapi.com/v1/current.json?key=${W_API_KEY}&q=${location.postcode}`)
+    axios.get(`https://api.weatherapi.com/v1/current.json?key=${W_API_KEY}&q=${location.postcode}`)
         .then(res => setCurentWeather(res.data.current))
         .catch(err => console.log(`Error: ${err}`))
         // 5 day forecast by location
-    axios.get(`http://api.weatherapi.com/v1/forecast.json?key=${W_API_KEY}&q=${location.postcode}&days=5`)
+    axios.get(`https://api.weatherapi.com/v1/forecast.json?key=${W_API_KEY}&q=${location.postcode}&days=5`)
         .then(res => setForecast(res.data.forecast.forecastday))
         .catch(err => console.log(`Error: ${err}`))
     }
