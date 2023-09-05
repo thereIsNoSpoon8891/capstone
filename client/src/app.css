@@ -116,7 +116,9 @@ button{
 }
 
 .day--container{
-    border: solid black 3px;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
     border-radius: 10px;
     margin: 5px;
     background: rgb(183, 219, 251);
@@ -146,7 +148,9 @@ button{
 }
 
 .current--container{
-    border: solid rgb(0, 0, 0) 5px;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
     border-radius: 10px;
     background: rgb(183, 219, 251);
     display: grid;
@@ -213,7 +217,7 @@ button{
     grid-row: 2/3;
     margin: auto;
     font-size: 20px;
-    
+    margin-right: 5px;
 }
 
 .temp{
@@ -453,9 +457,13 @@ button{
     }
     
     .day--container{
-        border: solid black 3px;
+        box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+        -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+        -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
         border-radius: 10px;
-        margin: 5px;
+        margin-top: 12px;
+        margin-left: 5px;
+        margin-right: 5px;
         background: rgb(183, 219, 251);
         display: grid;
         grid-template-columns: repeat(4, 1fr);
@@ -496,7 +504,9 @@ button{
     }
     
     .current--container{
-        border: solid rgb(0, 0, 0) 5px;
+        box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
         border-radius: 10px;
         background: rgb(183, 219, 251);
         display: grid;
@@ -544,6 +554,7 @@ button{
         margin: auto;
         font-size: 15px;
         text-align: center;
+        margin-left: 3px;
     }
     
     .uv{
@@ -568,6 +579,7 @@ button{
         margin: auto;
         font-size: 15px;
         text-align: center;
+        margin-right: 5px;
     }
 
     .high{
@@ -592,6 +604,7 @@ button{
         margin: auto;
         font-size: 15px;
         text-align: center;
+        margin-right: 5px;
     }
     
     .condition{
