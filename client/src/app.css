@@ -165,6 +165,10 @@ button{
     width: auto;
     height: 100px;
     font-size: 20px;
+    border: none;
+    box-shadow: 1px 5px 9px 1px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 1px 5px 9px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 5px 9px 1px rgba(0,0,0,0.75);
 }
 
 .location{
@@ -392,6 +396,10 @@ button{
     .get-loc-button{
         font-size: 20px;
         height: 40px;
+        border: none;
+        box-shadow: 1px 5px 9px 1px rgba(0,0,0,0.75);
+        -webkit-box-shadow: 1px 5px 9px 1px rgba(0,0,0,0.75);
+        -moz-box-shadow: 1px 5px 9px 1px rgba(0,0,0,0.75);
     }
     
     
@@ -410,10 +418,16 @@ button{
         font-size: 20px;
         grid-column: 1/2;
         grid-row: 2/3;
+        box-shadow: 1px 5px 9px 1px rgba(0,0,0,0.75);
+        -webkit-box-shadow: 1px 5px 9px 1px rgba(0,0,0,0.75);
+        -moz-box-shadow: 1px 5px 9px 1px rgba(0,0,0,0.75);
+        border: none;
     }
     
     .forecast-button:hover{
         background-color: rgba(0, 0, 255, 0.535);
+        box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+        
     }
     
     .delete-button{
@@ -424,6 +438,10 @@ button{
         grid-column: 4/5;
         grid-row: 3/4;
         margin: auto;
+        border: none;
+        box-shadow: 1px 5px 9px 1px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 1px 5px 9px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 5px 9px 1px rgba(0,0,0,0.75);
     }
     
     .delete-button:hover{
@@ -523,9 +541,13 @@ button{
         grid-row: 3/4;
         grid-column: 4/7;
         width: auto;
-        height: 80px;
+        height: 60px;
         font-size: 15px;
-        padding: 2px;
+        border: none;
+        box-shadow: 1px 5px 9px 1px rgba(0,0,0,0.75);
+        -webkit-box-shadow: 1px 5px 9px 1px rgba(0,0,0,0.75);
+        -moz-box-shadow: 1px 5px 9px 1px rgba(0,0,0,0.75);
+        margin-right: 3px;
     }
     
     .location{
@@ -642,7 +664,10 @@ button{
         width: 60%;
         font-size: 25px;
         margin-top: 10px;
-    
+        box-shadow: 1px 5px 9px 1px rgba(0,0,0,0.75);
+        -webkit-box-shadow: 1px 5px 9px 1px rgba(0,0,0,0.75);
+        -moz-box-shadow: 1px 5px 9px 1px rgba(0,0,0,0.75);
+        border: none;
     }
 
     .error-message{
