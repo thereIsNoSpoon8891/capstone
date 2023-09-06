@@ -456,6 +456,7 @@ button{
         font-size: 20px;
         width: fit-content;
         margin: auto;
+        margin-right: 5px;
         background: rgb(199, 57, 57);
         grid-column: 4/5;
         grid-row: 3/4;
