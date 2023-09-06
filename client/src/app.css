@@ -455,13 +455,10 @@ button{
         height: 50px;
         font-size: 20px;
         width: fit-content;
+        margin: auto;
         background: rgb(199, 57, 57);
         grid-column: 4/5;
         grid-row: 3/4;
-        margin-top: 50%;
-        margin-left: 20%;
-        margin-bottom: 50%;
-        margin-right: 60%;
         border: none;
         box-shadow: 1px 5px 9px 1px rgba(0,0,0,0.75);
     -webkit-box-shadow: 1px 5px 9px 1px rgba(0,0,0,0.75);
