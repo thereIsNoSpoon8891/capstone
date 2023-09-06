@@ -454,7 +454,7 @@ button{
     .delete-button{
         height: 50px;
         font-size: 20px;
-        width: fit-content;
+        width: fit-content(50%);
         margin: auto;
         margin-right: 5px;
         background: rgb(199, 57, 57);
@@ -474,6 +474,7 @@ button{
         height: 20px;
         font-size: 40px;
         padding: 10%;
+        text-shadow: 4px 4px 2px rgba(0,0,0,0.6);
     }
 
     .name-container{
