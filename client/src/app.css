@@ -113,9 +113,12 @@ button{
     flex-direction: column;
     align-items: center;
     font-size: 30px;
+    color: black;
+
 }
 .name{
     text-transform: capitalize;
+
 }
 
 .header--container h1{
@@ -474,20 +477,24 @@ button{
         height: 20px;
         font-size: 40px;
         padding: 10%;
-        text-shadow: 4px 4px 2px rgba(0,0,0,0.6);
     }
+
 
     .name-container{
         display: flex;
         flex-direction: column;
         align-items: center;
+        color: black;
+
     }
     .name{
         text-transform: capitalize;
+        color: black;
+
     }
     
     
-    .header--container h1{
+    .header--container {
         color: blue;
         text-align: center;
     
