@@ -49,6 +49,10 @@ button{
 .get-loc-button{
     font-size: 20px;
     height: 40px;
+    box-shadow: 1px 5px 9px 1px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 1px 5px 9px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 5px 9px 1px rgba(0,0,0,0.75);
+    border: none;
 }
 
 
@@ -69,6 +73,10 @@ button{
     font-size: 20px;
     grid-column: 1/2;
     grid-row: 2/3;
+    border: none;
+    box-shadow: 1px 5px 9px 1px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 1px 5px 9px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 5px 9px 1px rgba(0,0,0,0.75);
 }
 
 .forecast-button:hover{
@@ -83,6 +91,10 @@ button{
     grid-column: 6/7;
     grid-row: 3/4;
     margin: auto;
+    border: none;
+    box-shadow: 1px 5px 9px 1px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 1px 5px 9px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 5px 9px 1px rgba(0,0,0,0.75);
 }
 
 .delete-button:hover{
@@ -157,6 +169,8 @@ button{
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(3, 1fr);
     margin-top: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 .save-button{
@@ -272,6 +286,10 @@ button{
     width: 320px;
     font-size: 30px;
     margin-top: 10px;
+    border: none;
+    box-shadow: 1px 5px 9px 1px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 1px 5px 9px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 5px 9px 1px rgba(0,0,0,0.75);
 }
 
 .error-message{
@@ -519,6 +537,7 @@ button{
         margin: auto;
         font-size: 15px;
         text-align: center;
+        margin-left: 3px;
     }
     
     .current--container{
