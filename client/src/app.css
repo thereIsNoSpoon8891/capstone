@@ -454,7 +454,7 @@ button{
     .delete-button{
         height: 50px;
         font-size: 20px;
-        width: 70%;
+        width: fit-content;
         background: rgb(199, 57, 57);
         grid-column: 4/5;
         grid-row: 3/4;
@@ -511,10 +511,6 @@ button{
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: repeat(3, 1fr);
         column-gap: 4px;
-    }
-
-    #nav{
-        
     }
 
     .nav--container{
