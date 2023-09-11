@@ -3,8 +3,6 @@ import { useEffect } from 'react'
 
 
 
-
-
 const ProtectedRoutes = props => {
 
 const {token, children} = props

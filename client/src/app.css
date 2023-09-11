@@ -21,6 +21,42 @@ button{
     width: 400px;
 }
 
+.reset-container{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 200px;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    margin-top: 10%;
+    background: rgba(227, 226, 226, 0.531);
+    border-radius: 10px;
+}
+
+.reset-background{
+    background-image: url(../images/rain-background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position:absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+}
+
+.reset-container input {
+    margin-top: 20px;
+    width: 250px;
+    border-radius: 5px;
+    border: none;
+}
+
+.reset-container button {
+    border: none;
+    width: 250px;
+    margin-top: 5px;
+}
 .login-page--container{
     display: flex;
     flex-direction: column;
@@ -143,7 +179,7 @@ button{
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    
+    overflow: visible;/*try to fix cut off*/
 }
 
 .nav--container{
@@ -304,6 +340,10 @@ button{
 
 .high{
     display: none;
+}
+
+.toggle-link{
+    color: blue;
 }
 
 }
@@ -699,5 +739,51 @@ button{
 
     .error-message{
         color: red;
+    }
+
+    .toggle-link{
+        color: blue;
+    }
+
+    .reset-container{
+        display: flex;
+        flex-direction: column;
+        width: 400px;
+        height: 200px;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        margin-top: 10%;
+        background: rgba(227, 226, 226, 0.531);
+        border-radius: 10px;
+    }
+    
+    .reset-background{
+        background-image: url(../images/rain-background.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        position:absolute;
+        top: 0px;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+    }
+    
+    .reset-container input {
+        margin-top: 20px;
+        width: 250px;
+        border-radius: 5px;
+        border: none;
+    }
+    
+    .reset-container button {
+        border: none;
+        width: 250px;
+        margin-top: 5px;
+    }
+    .login-page--container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 }

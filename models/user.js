@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 const bcrypt = require('bcrypt')
+const jwt = require('jsonwebtoken')
 
 const userSchema = new Schema({
     username:{
@@ -12,6 +13,11 @@ const userSchema = new Schema({
     password: {
         type: String,
         required: true
+    },
+    email: {
+        type: String,
+        required: true,
+        unique: true
     }
 })
 
@@ -40,6 +46,12 @@ userSchema.methods.withoutPassword = function (){
         delete user.password
             return user
 
+}
+/////////////////////////password reset///////////////
+// function to send token for password reset
+userSchema.methods.createPasswordResetToken = function () {
+    const resetToken = jwt.sign({id: this._id}, process.env.SECRET, {expiresIn: '10m'})
+    return resetToken
 }
 
 module.exports = mongoose.model("User", userSchema)

@@ -51,6 +51,10 @@ const UserContextProvider = props => {
         })
     }
 
+    const resetPassword = email => {
+        // send email to backend for account recovery
+    }
+
     const handleError = err => {
         setUser(prevUser => ({
             ...prevUser,

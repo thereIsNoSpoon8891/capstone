@@ -1,4 +1,5 @@
 import { useState, useEffect, useContext, useRef } from "react"
+import { Link } from "react-router-dom"
 import { UserContext } from "../context/userContext"
 import axios from 'axios'
 
@@ -11,8 +12,10 @@ const Auth = () => {
         username: "",
         password: "",
         verifyPassword: "",
+        email: "",
         errorMessage: ""
     }
+    // add email for recovery
 
     const [toggleForm, setToggleForm] = useState(false)
 
@@ -34,6 +37,12 @@ const Auth = () => {
 
     const handleSignUp = e => {
         e.preventDefault()
+            if(!inputs.username || !inputs.password || !inputs.email) {
+                setInputs(prevInputs => ({
+                    ...prevInputs,
+                    errorMessage: "Please fill out all required fields"
+                }))
+            }
             if (inputs.password !== inputs.verifyPassword){
                     setInputs(prevInputs => ({
                         ...prevInputs,
@@ -120,6 +129,15 @@ const Auth = () => {
             onChange={handleChange}
             placeholder="Verify Password"
             />
+            <input
+            className="inputs"
+            type="email"
+            name="email"
+            value={inputs.email}
+            onChange={handleChange}
+            placeholder="myemail@gmail.com"
+            />
+            
             <button
             className="auth--buttons"
             onClick={handleSignUp}
@@ -159,11 +177,16 @@ const Auth = () => {
         </form>    
     }
     {toggleForm ?
-    <p>Have an account? Click <u onClick={toggleForms}>here</u> to Log in.</p>
+    <p>Have an account? Click <u className="toggle-link" onClick={toggleForms}>here</u> to Log in.</p>
     :
-    <p>Need an account? Click <u onClick={toggleForms}>here</u> to make one.</p>
+    <p>Need an account? Click <u className="toggle-link" onClick={toggleForms}>here</u> to make one.</p>
 }
     {inputs.errorMessage || user.errorMessage ? <p className="error-message">{inputs.errorMessage || user.errorMessage}</p> : ""}
+    
+    <p>
+        Forgot password? Click <Link to="/recovery"> <u>here</u></Link> to reset it.
+    </p>
+
     </div>
     {randomCity ? <div className="rando-city-container">
         <h1>

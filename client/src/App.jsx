@@ -6,6 +6,7 @@ import Auth from '../components/Auth'
 import Header from '../components/Header'
 import Search from '../components/Search'
 import SavedLoc from '../components/SavedLoc'
+import Recovery from '../components/Recovery'
 import LocDetails from '../components/LocDetails'
 import ProtectedRoutes from '../components/ProtectedRoutes'
 
@@ -19,6 +20,8 @@ const {token} = useContext(UserContext)
 
       <Routes>
         <Route path="/" element={token ? <Profile /> : <Auth />}/>
+
+        <Route path='/recovery' element={ <Recovery /> }/>
 
         <Route path='/profile' element={
           <ProtectedRoutes
