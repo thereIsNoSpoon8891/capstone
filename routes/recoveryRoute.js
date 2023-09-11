@@ -46,7 +46,7 @@ recoveryRoute.route("/forgot-password")
                     return next(new Error('email not found'))
             } else if (user) {
                 const token = user.createPasswordResetToken();
-                const encodedToken = token.split('.').join('%2E')
+                const encodedToken = token.split('.').join('_')
                     const resetURL = `${req.protocol}:${req.get('host')}/password-reset/${token}`
                     const devURL = `http://localhost:5173/password-reset/${encodedToken}`
                         const mailgun = mg({
@@ -73,7 +73,9 @@ recoveryRoute.route("/forgot-password")
 
 recoveryRoute.patch('/password-reset/:token', async (req, res, next) => {
     try{
-        const {password} = req.body;
+
+        const {password} = req.body
+        console.log(password)
         const hashedPassword = await bcrypt.hash(password, 10);
         const decodedToken = jwt.verify(req.params.token, process.env.SECRET);
         await User.findByIdAndUpdate(decodedToken.id, {password: hashedPassword})

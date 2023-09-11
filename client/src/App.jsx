@@ -20,10 +20,10 @@ const {token} = useContext(UserContext)
     {token && <Header />}
 
       <Routes>
+        <Route path='/password-reset/:token' element={ <PasswordChange /> }/>
         <Route path="/" element={token ? <Profile /> : <Auth />}/>
 
         <Route path='/recovery' element={ <Recovery /> }/>
-        <Route path='/password-reset/:token' element={ <PasswordChange /> }/>
 
         <Route path='/profile' element={
           <ProtectedRoutes

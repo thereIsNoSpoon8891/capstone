@@ -43,8 +43,8 @@ const nav = useNavigate()
                 alert("Passwords Do NOT Match!")
             } else if (newPassword.password === newPassword.verifyPassword){
                 let token = params.token
-                let decodedToken = token.split('%2E').join('.')
-                axios.patch(`/api/recovery/password-reset/${decodedToken}`, newPassword.password)
+                let decodedToken = token.split('_').join('.')
+                axios.patch(`/api/recovery/password-reset/${decodedToken}`, newPassword)
                     .then(res => {
                         console.log(res)
                         nav("/")
