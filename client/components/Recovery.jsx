@@ -2,14 +2,17 @@ import { useState } from "react"
 import { useContext } from "react"
 import { UserContext } from "../context/userContext"
 import { Link } from "react-router-dom"
+import axios from "axios"
 
 
 const Recovery = () => {
 
     const [email, setEmail] = useState({
         email: "",
-        error: ""
+        message: ""
     })
+
+    const [display, setDisplay] = useState(true)
 
     const handleReset = e => {
         e.preventDefault();
@@ -17,10 +20,23 @@ const Recovery = () => {
         if(!email.email) {
             setEmail(prevEmail => ({
                 ...prevEmail,
-                error: "Please enter a valid E-Mail address."
+                message: "Please enter a valid E-Mail address."
             }))
+        } else if (email.email) {
+            axios.post("/api/recovery/forgot-password", email)
+                .then(res => {
+                    console.log(res)
+                    setDisplay(prev => !prev)
+                })
+                .catch(err => {
+                    console.log(err)
+                    setEmail(prev => ({
+                        ...prev,
+                        message: "something went wrong"
+                    }))
+                })
         }
-        // handle send email for reset
+        
     }
     
     const handleChange = e => {
@@ -33,10 +49,10 @@ const Recovery = () => {
     }
 
 //console.log(email.email)
-// console.log(email.error)
+// console.log(email.message)
     return(
     <div className="reset-background">
-        <div
+        {display ? <div
         className="reset-container"
         >
             <input
@@ -50,15 +66,28 @@ const Recovery = () => {
             <button 
             onClick={handleReset}
             className="auth--buttons">
-                Reset Password
+                Send Link
             </button>
-            {email.error && <p>{email.error}</p>}
+            {email.message && <p>{email.message}</p>}
             <Link to="/">
             <p>
               or  click here to log in
             </p>
             </Link>
         </div>
+        :
+        <>
+        <div className="reset-container">
+            Request sent, please check your inbox and spam folder for password reset instructions.
+            <Link to="/">
+            <p>
+              reset your password then, click here to log in.
+            </p>
+            </Link>
+        </div>
+        
+        </>
+        }
     </div>
     )
 }

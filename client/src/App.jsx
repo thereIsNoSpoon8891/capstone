@@ -8,6 +8,7 @@ import Search from '../components/Search'
 import SavedLoc from '../components/SavedLoc'
 import Recovery from '../components/Recovery'
 import LocDetails from '../components/LocDetails'
+import PasswordChange from '../components/PasswordChange'
 import ProtectedRoutes from '../components/ProtectedRoutes'
 
 function App() {
@@ -22,6 +23,7 @@ const {token} = useContext(UserContext)
         <Route path="/" element={token ? <Profile /> : <Auth />}/>
 
         <Route path='/recovery' element={ <Recovery /> }/>
+        <Route path='/password-reset/:token' element={ <PasswordChange /> }/>
 
         <Route path='/profile' element={
           <ProtectedRoutes

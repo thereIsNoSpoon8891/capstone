@@ -46,7 +46,9 @@ recoveryRoute.route("/forgot-password")
                     return next(new Error('email not found'))
             } else if (user) {
                 const token = user.createPasswordResetToken();
-                    const resetURL = `${req.protocol}: ${req.get('host')}/api/recovery/reset-password/${token}`
+                const encodedToken = token.split('.').join('%2E')
+                    const resetURL = `${req.protocol}:${req.get('host')}/password-reset/${token}`
+                    const devURL = `http://localhost:5173/password-reset/${encodedToken}`
                         const mailgun = mg({
                             apiKey: process.env.MAIL_GUN_PRI_KEY,
                             domain: process.env.MAIL_GUN_DOMAIN
@@ -57,7 +59,7 @@ recoveryRoute.route("/forgot-password")
                             to: email,
                             subject: 'password reset',
                             text: `Copy and past this link into your browser to reset your pasword:
-                             ${resetURL}`
+                             ${devURL}`
                         }
 
                         mailgun.messages().send(data, (error, body) => {
@@ -69,7 +71,7 @@ recoveryRoute.route("/forgot-password")
         .catch(err => next(err))
 })
 
-recoveryRoute.patch('/reset-password/:token', async (req, res, next) => {
+recoveryRoute.patch('/password-reset/:token', async (req, res, next) => {
     try{
         const {password} = req.body;
         const hashedPassword = await bcrypt.hash(password, 10);

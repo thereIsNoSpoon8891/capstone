@@ -120,6 +120,7 @@ const Auth = () => {
             value={inputs.password}
             onChange={handleChange}
             placeholder="Password"
+            autoComplete="true"
             />
             <input
             className="inputs"
@@ -166,6 +167,7 @@ const Auth = () => {
             value={inputs.password}
             onChange={handleChange}
             placeholder="Password"
+            autoComplete="true"
             />
 
             <button 
