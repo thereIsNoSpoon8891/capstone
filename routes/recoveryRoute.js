@@ -47,8 +47,8 @@ recoveryRoute.route("/forgot-password")
             } else if (user) {
                 const token = user.createPasswordResetToken();
                 const encodedToken = token.split('.').join('_')
-                    const resetURL = `${req.protocol}:${req.get('host')}/password-reset/${token}`
-                    const devURL = `http://localhost:5173/password-reset/${encodedToken}`
+                    const resetURL = `${req.protocol}:${req.get('host')}/password-reset/${encodedToken}`
+                    const devURL = `http://localhost:5173/password-reset/${encodedToken}`//for dev testing
                         const mailgun = mg({
                             apiKey: process.env.MAIL_GUN_PRI_KEY,
                             domain: process.env.MAIL_GUN_DOMAIN
@@ -59,7 +59,7 @@ recoveryRoute.route("/forgot-password")
                             to: email,
                             subject: 'password reset',
                             text: `Copy and past this link into your browser to reset your pasword:
-                             ${devURL}`
+                             ${resetURL}`
                         }
 
                         mailgun.messages().send(data, (error, body) => {
