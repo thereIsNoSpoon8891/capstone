@@ -139,9 +139,10 @@ button{
 }
 
 .header--welcome{
-    height: 100px;
+
     font-size: 100px;
     text-shadow: 4px 4px 2px rgba(0,0,0,0.6);
+    margin-top: 0;
 }
 
 .name-container{
@@ -156,9 +157,17 @@ button{
     text-transform: capitalize;
 
 }
+.header--container {
+    background-image: url('../images/mainSky.jpg');
+    background-repeat: no-repeat;
+    background-size:cover;
+    padding-top: 20px;
+}
+
 
 .header--container h1{
     color: blue;
+    opacity: .9;
     text-align: center;
 
 }
@@ -416,6 +425,7 @@ button{
 
 @media only screen and (max-width: 480px) {
 
+
     .auth--container{
         color: blue;
         font-size: 40px;
@@ -514,9 +524,10 @@ button{
     }
     
     .header--welcome{
-        height: 20px;
+        height: 30px;
         font-size: 40px;
-        padding: 10%;
+        padding: 15%;
+        margin-top: 0;
     }
 
 
@@ -537,7 +548,8 @@ button{
     .header--container {
         color: blue;
         text-align: center;
-    
+        background-image: url(../images/sky.jpg);
+        background-size: cover;
     }
     .header--container a {
         text-decoration: none;
@@ -565,6 +577,7 @@ button{
         margin: 10px;
         border-top: 10px;
         border: solid blue;
+        border-radius: 5px;
     }
 
     .nav--container a h1{
