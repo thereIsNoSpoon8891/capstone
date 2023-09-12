@@ -58,8 +58,8 @@ recoveryRoute.route("/forgot-password")
                             from: 'Weather-or-not <admin@weather-or-not.com>',
                             to: email,
                             subject: 'password reset',
-                            text: `Copy and past this link into your browser to reset your pasword:
-                             ${resetURL}`
+                            text: `${user.username}, Copy and past this link into your browser to reset your pasword:
+${resetURL}`
                         }
 
                         mailgun.messages().send(data, (error, body) => {
