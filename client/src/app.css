@@ -756,6 +756,7 @@ button{
         margin-top: 10%;
         background: rgba(227, 226, 226, 0.531);
         border-radius: 10px;
+        padding: 3px;
     }
     
     .reset-background{

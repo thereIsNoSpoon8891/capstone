@@ -78,7 +78,9 @@ const Recovery = () => {
         :
         <>
         <div className="reset-container">
-            Request sent, please check your inbox and spam folder for password reset instructions.
+            <p>
+                Request sent, please check your inbox and spam folder for password reset instructions.
+            </p>
             <Link to="/">
             <p>
               reset your password then, click here to log in.
