@@ -756,9 +756,11 @@ button{
         margin-top: 10%;
         background: rgba(227, 226, 226, 0.531);
         border-radius: 10px;
-        padding: 3px;
+        padding-bottom: 15px;
     }
-    
+    .reset-container p {
+        margin: auto;
+    }
     .reset-background{
         background-image: url(../images/rain-background.jpg);
         background-repeat: no-repeat;
