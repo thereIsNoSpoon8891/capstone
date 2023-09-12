@@ -2,7 +2,7 @@ import {useState, useContext} from 'react'
 import { LocationsContext } from '../context/locationsContext'
 import Day from './Day'
 import axios from 'axios'
-
+import ConfirmModal from './ConfirmModal'
 
 
 const Search = () => {
@@ -20,6 +20,8 @@ const Search = () => {
 
     const [error, setError] = useState("")
 
+    const [modalOpen, setModalOpen] = useState(false)
+
     const {postLocation} = useContext(LocationsContext)
 
     const handleChange = e => {
@@ -30,9 +32,14 @@ const Search = () => {
         }))
     }
 
+    const handleModal = () => {
+        setModalOpen(prev => !prev)
+
+    }
     const handleSubmit = e => {// this needs to be a 'save' button
         e.preventDefault()
             postLocation(location)
+            handleModal()
     }
 
     const findWeather = e => {
@@ -107,6 +114,10 @@ const Search = () => {
             <p>Please use City, State format OR Postal Code </p>
             </>
             }
+            {modalOpen && <ConfirmModal 
+            location={location}
+            handleModal={handleModal}
+            />}
         </div>
     )
 }
