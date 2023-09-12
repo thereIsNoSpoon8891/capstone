@@ -181,9 +181,10 @@ button{
     -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
     border-radius: 10px;
-    margin-top: 15px;
-    margin-left: 5px;
-    margin-right: 5px;
+    width: 80%;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
     background: rgb(183, 219, 251);
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -219,9 +220,10 @@ button{
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    margin-top: 18px;
-    margin-left: 5px;
-    margin-right: 5px;
+    margin: auto;
+    margin-top: 10px;
+    width: 80%;
+    align-self: center;
 }
 
 .save-button{
@@ -355,6 +357,53 @@ button{
     color: blue;
 }
 
+.modal--container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    font-size: 10px;
+    background-image: url('../images/map.jpg');
+    width: 80%;
+    height: 600px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 1px 5px 9px 1px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 1px 5px 9px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 5px 9px 1px rgba(0,0,0,0.75);
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.modal--button{
+    height: 40px;
+    width: 30%;
+    margin: auto;
+    border: none;
+    font-size: 18px;
+    box-shadow: 1px 5px 9px 1px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 1px 5px 9px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 5px 9px 1px rgba(0,0,0,0.75);
+}
+.modal--button:hover{
+    opacity: .85;
+}
+.modal--text{
+    margin-top: 10%;
+    text-transform:uppercase;
+    background-color: rgba(180, 180, 217, 0.692);
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 40px;
+}
+
+.modal--pointer{
+    width:40px;
+    border-radius: 50%;
+    margin-top: 5px;
+}
 }
 /* ******************************************************************************************** */
 /* ******************************************************************************************** */
@@ -845,5 +894,6 @@ button{
     .modal--pointer{
         width:40px;
         border-radius: 50%;
+        margin-top: 2px;
     }
 }
