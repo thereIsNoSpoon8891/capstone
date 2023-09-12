@@ -760,6 +760,7 @@ button{
     }
     .reset-container p {
         margin: auto;
+        text-align: center;
     }
     .reset-background{
         background-image: url(../images/rain-background.jpg);
