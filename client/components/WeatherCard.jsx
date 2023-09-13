@@ -8,7 +8,7 @@ import { LocationsContext } from "../context/locationsContext"
 
 const WeatherCard = props => {
 
-    const {location, id} = props
+    const {location, id, handleModal} = props
 
     const [currentWeather, setCurentWeather] = useState("")
 
@@ -28,6 +28,7 @@ const WeatherCard = props => {
 
     const handleDelete = () => {
         deleteLoc(id)
+            handleModal()
     }
 
     return(
