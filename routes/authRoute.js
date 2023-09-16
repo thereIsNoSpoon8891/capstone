@@ -8,10 +8,10 @@ authRouter.route("/signup")
 .post((req, res, next) => {
     User.findOne({username: req.body.username})
         .then(user => {
-            if(user){
+            if(user || user.email === req.body.email){
                 res.status(403)
-                    return next(new Error(`The User Name ${user.username} already exists.`))
-            } else if(!user){
+                    return next(new Error(`The User Name or E-mail is taken.`))
+            } else if(!user && !user.email){
                 const newUser = new User(req.body)
                     req.body.username.toLowerCase()
                         newUser.save()

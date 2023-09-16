@@ -24,6 +24,12 @@ const UserContextProvider = props => {
         axios.post(`/api/auth/signup`, credentials)
             .then(res => {
                 const {user, token} = res.data
+                if(!token){
+                  return  setUser(prevUser => ({
+                        ...prevUser,
+                        errorMessage: "Sign Up Failed, E-mail may belong to another account"
+                    }))
+                }
                     localStorage.setItem("user", JSON.stringify(user))
                         localStorage.setItem("token", token)//set user
                             setUser(prevUser => ({
@@ -81,7 +87,7 @@ const UserContextProvider = props => {
             errorMessage: ""
         }))
     }
-console.log(user.errorMessage)
+console.log(user)
     return(
         <UserContext.Provider
         value={{

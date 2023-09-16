@@ -12,7 +12,7 @@ const ChangeName = () => {
     }
     const [inputs, setInputs] = useState(defineUser)
 
-    const { changeName } = useContext(UserContext)
+    const { changeName, ...user } = useContext(UserContext)
 
     const handleChange = e => {
         const {name, value} = e.target
@@ -62,7 +62,8 @@ return (
         >
             Submit
         </button>
-        {inputs.message && <p>{inputs.message}</p> }
+    {inputs.message || user.errorMessage ? <p className="error-message">{inputs.errorMessage || user.errorMessage}</p> : ""}
+        
     </div>
 )
 }

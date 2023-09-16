@@ -132,6 +132,7 @@ const Auth = () => {
             onChange={handleChange}
             placeholder="Verify Password"
             minLength={5}
+            autoComplete="true"
             />
             <input
             className="inputs"
