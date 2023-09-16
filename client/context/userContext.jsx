@@ -3,6 +3,14 @@ import axios from "axios";
 
 const UserContext = createContext()
 
+const iAxios = axios.create()
+
+iAxios.interceptors.request.use(config => {
+    const token = localStorage.getItem("token")
+    config.headers.Authorization = `Bearer ${token}`
+    return config
+})
+
 const UserContextProvider = props => {
     const {children} = props
     
@@ -51,8 +59,13 @@ const UserContextProvider = props => {
         })
     }
 
-    const resetPassword = email => {
-        // send email to backend for account recovery
+    const changeName = newUserName => {
+        iAxios.patch("/api/auth/manage/changeName", newUserName)
+            .then(res => {
+                console.log(res)
+                logout()
+            })
+            .catch(err => handleError(err.response.data.errorMessage))
     }
 
     const handleError = err => {
@@ -68,7 +81,7 @@ const UserContextProvider = props => {
             errorMessage: ""
         }))
     }
-
+console.log(user.errorMessage)
     return(
         <UserContext.Provider
         value={{
@@ -76,7 +89,8 @@ const UserContextProvider = props => {
             signUp,
             login,
             logout,
-            resetError
+            resetError,
+            changeName
         }}
         >
             {children}

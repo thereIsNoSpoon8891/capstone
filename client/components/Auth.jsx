@@ -111,6 +111,7 @@ const Auth = () => {
             value={inputs.username}
             onChange={handleChange}
             placeholder="User Name"
+            minLength={5}
             />
 
             <input 
@@ -121,6 +122,7 @@ const Auth = () => {
             onChange={handleChange}
             placeholder="Password"
             autoComplete="true"
+            minLength={5}
             />
             <input
             className="inputs"
@@ -129,6 +131,7 @@ const Auth = () => {
             value={inputs.verifyPassword}
             onChange={handleChange}
             placeholder="Verify Password"
+            minLength={5}
             />
             <input
             className="inputs"

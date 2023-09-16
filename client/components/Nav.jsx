@@ -17,13 +17,18 @@ const { logout, token } = useContext(UserContext)
                     </h1>
                 </Link>
                 <Link to='/search' >
-                    <h1>
+                    <h1 className='mobile-nav-divider'>
                         Search
                     </h1>
                 </Link>
                 <Link to="/saved" >
-                    <h1>
+                    <h1 className='mobile-nav-divider'>
                         My locations
+                    </h1>
+                </Link>
+                <Link to="/settings">
+                    <h1 className='mobile-nav-divider'>
+                        Settings
                     </h1>
                 </Link>
 

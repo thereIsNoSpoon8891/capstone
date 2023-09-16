@@ -6,11 +6,13 @@ import Auth from '../components/Auth'
 import Header from '../components/Header'
 import Search from '../components/Search'
 import SavedLoc from '../components/SavedLoc'
+import Settings from '../components/Settings'
 import Recovery from '../components/Recovery'
+import ChangeName from '../components/ChangeName'
 import LocDetails from '../components/LocDetails'
-import PasswordChange from '../components/PasswordChange'
+import ChangePassword from '../components/ChangePassword'
+import PasswordReset from '../components/PasswordReset'
 import ProtectedRoutes from '../components/ProtectedRoutes'
-
 function App() {
 
 const {token} = useContext(UserContext)
@@ -20,7 +22,6 @@ const {token} = useContext(UserContext)
     {token && <Header />}
 
       <Routes>
-        <Route path='/password-reset/:token' element={ <PasswordChange /> }/>
         <Route path="/" element={token ? <Profile /> : <Auth />}/>
 
         <Route path='/recovery' element={ <Recovery /> }/>
@@ -49,6 +50,31 @@ const {token} = useContext(UserContext)
           </ProtectedRoutes>
         } />
 
+        <Route path='/settings' element={
+          <ProtectedRoutes
+          token={token}
+          >
+            <Settings />
+          </ProtectedRoutes>
+        }
+        />
+        <Route path='/changename' element={
+          <ProtectedRoutes
+          token={token}
+          >
+            <ChangeName />
+          </ProtectedRoutes>
+        }
+        />
+
+        <Route path='/changepassword' element={
+          <ProtectedRoutes
+          token={token}
+          >
+            <ChangePassword />
+          </ProtectedRoutes>
+        }
+        />
         <Route path='/forecast/:location' element={
           <ProtectedRoutes
           token={token}
@@ -56,6 +82,8 @@ const {token} = useContext(UserContext)
               <LocDetails />
           </ProtectedRoutes>
         } />
+        <Route path='/password-reset/:token' element={ <PasswordReset /> }/>
+
       </Routes>
     </>
   )

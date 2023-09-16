@@ -425,6 +425,32 @@ button{
 .delete--modal-button{
     font-size: 30px;
 }
+
+.settings--container{
+    background-color: rgba(128, 128, 128, 0.499);
+    width: 30%;
+    display: flex;
+    border-radius: 10px;
+    height: 400px;
+    margin: auto;
+}
+.settings--ul{
+    height: 200px;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: auto;
+}
+.settings--ul li {
+    font-size: 30px;
+    text-decoration: none;
+    color: blue;
+}
+
+.settings--ul a  {
+    text-decoration: none;
+}
 }
 /* ******************************************************************************************** */
 /* ******************************************************************************************** */
@@ -652,6 +678,15 @@ button{
 
     .nav--container a h1{
         font-size: 15px;
+        margin-left: 2px;
+        padding-left: 5px;
+    }
+
+    .mobile-nav-divider{
+        font-size: 15px;
+        border-left: solid 1px blue;
+        margin-left: 2px;
+        padding-left: 5px;
     }
 
     .nav--container button{
@@ -941,5 +976,30 @@ button{
     
     .delete--modal-button{
         font-size: 30px;
+    }
+
+    .settings--container{
+        background-color: rgba(128, 128, 128, 0.499);
+        width: 50%;
+        display: flex;
+        border-radius: 10px;
+        height: 200px;
+        margin: auto;
+    }
+    .settings--ul{
+        height: 150px;
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    .settings--ul li {
+        font-size: 15px;
+        text-decoration: none;
+        color: blue;
+    }
+    
+    .settings--ul a  {
+        text-decoration: none;
     }
 }

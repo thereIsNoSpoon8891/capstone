@@ -16,11 +16,7 @@ const PasswordChange = () => {
 const [newPassword, setNewPassword] = useState(defaults)
 
 const nav = useNavigate()
-    // handle submitting a new password to the server, the link sent to the email, needs to route the 
-    // user to THIS component, then we can use useParams hook to submit the passsword change.
-    // will I be able to protect this route with the token present?
-    // will I be able to send the token to the backend for auth?
-    // I may need this route to login the user to keep it protected...
+
     const handleChange = e => {
         const {name, value} = e.target
             setNewPassword(prev => ({
@@ -31,11 +27,6 @@ const nav = useNavigate()
 
     const params = useParams()
 
-// resetAxios.interceptors.request.use(config =>{
-//     const token = params.token
-//     config.headers.Authorization = `Bearer ${token}`
-//     return config
-// })
 
     const handleSubmit = e => {
         e.preventDefault();

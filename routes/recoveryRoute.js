@@ -28,9 +28,11 @@ recoveryRoute.route("/forgot-password")
                         const data = {
                             from: 'Weather-or-not <admin@weather-or-not.com>',
                             to: email,
-                            subject: 'password reset',
+                            subject: 'password reset/DO-NOT-REPLY',
                             text: `${user.username}, Copy and past this link into your browser to reset your pasword:
-                            ${resetURL}`
+                            ${resetURL}
+                            Do Not reply to this E-mail, the inbox is unmonitered.
+                            `
                         }
 
                         mailgun.messages().send(data, (error, body) => {
