@@ -83,7 +83,7 @@ const Recovery = () => {
             </p>
             <Link to="/">
             <p>
-              reset your password then, click here to log in.
+              return to login page.
             </p>
             </Link>
         </div>
