@@ -48,7 +48,6 @@ recoveryRoute.patch('/password-reset/:token', async (req, res, next) => {
     try{
 
         const {password} = req.body
-        console.log(password)
         const hashedPassword = await bcrypt.hash(password, 10);
         const decodedToken = jwt.verify(req.params.token, process.env.SECRET);
         await User.findByIdAndUpdate(decodedToken.id, {password: hashedPassword})

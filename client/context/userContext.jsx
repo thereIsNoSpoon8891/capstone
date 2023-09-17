@@ -74,6 +74,15 @@ const UserContextProvider = props => {
             .catch(err => handleError(err.response.data.errorMessage))
     }
 
+    const changePassword = newPassword => {
+        iAxios.patch("/api/auth/manage/changePassword", newPassword)
+            .then(res => {
+                console.log(res)
+                logout()
+            })
+            .catch(err => handleError(err.response.data.errorMessage))
+    }
+
     const handleError = err => {
         setUser(prevUser => ({
             ...prevUser,
@@ -96,7 +105,8 @@ console.log(user)
             login,
             logout,
             resetError,
-            changeName
+            changeName,
+            changePassword
         }}
         >
             {children}

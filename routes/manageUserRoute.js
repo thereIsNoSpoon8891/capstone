@@ -1,8 +1,8 @@
 const express = require('express')
 const manageUserRouter = express.Router()
 const User = require('../models/user')
-
-
+const bcrypt = require('bcrypt')
+const jwt = require('jsonwebtoken')
 
 manageUserRouter.route("/changeName")
 .patch((req, res, next) => {
@@ -22,10 +22,25 @@ manageUserRouter.route("/changeName")
     
 })
 
-
-
-
-
+manageUserRouter.route("/changePassword")// must use async/await with bcrypt!/////
+.patch(async (req, res, next) => {
+   try {
+    req.body.user = req.auth._id
+        const {password} = req.body
+        const hashedPassword = await bcrypt.hash(password, 10);
+            User.findByIdAndUpdate({_id: req.body.user}, {password: hashedPassword}, {new: true})
+                .then(updatedUser => {
+                    if(updatedUser){
+                        res.status(201).send(`password change successful`)
+                    } else if (!updatedUser){
+                        next(new Error("update failed"))
+                    }
+                })
+                .catch(err => next(err))
+            } catch (error) {
+                    next(error)
+    }
+})
 
 
 module.exports = manageUserRouter

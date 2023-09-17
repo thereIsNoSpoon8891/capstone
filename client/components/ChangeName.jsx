@@ -22,7 +22,7 @@ const ChangeName = () => {
             }))
     }
 
-    const handSubmit = e => {
+    const handleSubmit = e => {
         e.preventDefault();
         if(inputs.username !== inputs.checkName){
           return setNewUserName(prev => ({
@@ -57,7 +57,7 @@ return (
             className="inputs"/>
         </form>
         <button
-        onClick={handSubmit}
+        onClick={handleSubmit}
         className="auth--buttons"
         >
             Submit
