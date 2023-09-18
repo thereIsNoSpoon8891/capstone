@@ -1,6 +1,6 @@
 import { useContext, useState } from "react"
 import { UserContext } from "../context/userContext"
-
+import LoggedOutModal from "../components/LoggedOutModal"
 
 
 
@@ -13,6 +13,8 @@ const ChangePassword = () => {
     }
     const [inputs, setInputs] = useState(defineUser)
 
+    const [openModal, setOpenModal] = useState(false)
+
     const { changePassword, ...user } = useContext(UserContext)
 
     const handleSubmit = e => {
@@ -24,6 +26,7 @@ const ChangePassword = () => {
             }))
         } else if(inputs.password === inputs.checkPassword){
                 changePassword(inputs)
+                handleModal()
         }
     }
 
@@ -35,9 +38,13 @@ const ChangePassword = () => {
         }))
     }
 
+    const handleModal = () => {
+        setOpenModal(prev => !prev)
+    }
+
 return (
-    <div className="reset-container">
-        <form className="auth--container">
+    <div>
+        <form className="reset-container">
             
             <input
             minLength={5}
@@ -59,15 +66,15 @@ return (
             className="inputs"
             autoComplete="true"
             />
-        </form>
         <button
         onClick={handleSubmit}
         className="auth--buttons"
         >
             Submit
         </button>
+        </form>
     {inputs.message || user.errorMessage ? <p className="error-message">{inputs.errorMessage || user.errorMessage}</p> : ""}
-        
+        {openModal && <LoggedOutModal handleModal={handleModal}/>}
     </div>
 )
 }

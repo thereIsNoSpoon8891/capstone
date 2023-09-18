@@ -12,6 +12,11 @@ button{
 }
 
 @media only screen and (min-width: 480px) {
+    #root{
+        height: 100vh;
+        height: 100vw;
+        width: 100vw;
+    }
 .auth--container{
     color: blue;
     font-size: 40px;
@@ -62,12 +67,28 @@ button{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    margin-top: 5%;
 }
+.landing-page--container{
+    background: rgb(255,255,255);
+    background: radial-gradient(circle, rgba(255,255,255,1) 71%, rgba(70,119,252,1) 100%);
+    height: 100%;
+    min-height: 100%;
+    width: 100%;
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
 
+}
 .inputs{
     height: 40px;
     margin: 2px;
     font-size: 20px;
+    border: solid black 1px;
+    border-radius: 5px;
 }
 
 .rando-city-container{
@@ -77,6 +98,7 @@ button{
 .auth--buttons{
     height: 50px;
     font-size: 20px;
+    border: none;
 }
 
 .profile--container{
@@ -190,7 +212,7 @@ button{
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    overflow: visible;/*try to fix cut off*/
+
 }
 
 .nav--container{
@@ -451,6 +473,31 @@ button{
 .settings--ul a  {
     text-decoration: none;
 }
+
+.signed--out-modal{
+    background-color: aliceblue;
+    border: solid blue 2px;
+    border-radius: 10px;
+    width: 100%;
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.signed--out-modal p{
+    font-size: 30px;
+}
+
+.signed--out-modal button{
+    height: 40px;
+    font-size: 20px;
+}
 }
 /* ******************************************************************************************** */
 /* ******************************************************************************************** */
@@ -521,7 +568,9 @@ button{
 
 @media only screen and (max-width: 480px) {
 
-
+    #root{
+        height: 100vh;
+    }
     .auth--container{
         color: blue;
         font-size: 40px;
@@ -544,15 +593,19 @@ button{
         height: 40px;
         margin: 2px;
         font-size: 20px;
+        border: solid black 1px;
+        border-radius: 5px;
     }
     
     .rando-city-container{
         text-align: center;
+        margin: 0;
     }
     
     .auth--buttons{
         height: 50px;
         font-size: 20px;
+        border: none;
     }
     
     .profile--container{
@@ -1001,5 +1054,42 @@ button{
     
     .settings--ul a  {
         text-decoration: none;
+    }
+
+    .signed--out-modal{
+        background-color: aliceblue;
+        border: solid blue 2px;
+        border-radius: 10px;
+        width: 90%;
+        height: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .signed--out-modal p {
+        font-size: 15px;
+    }
+
+    .signed--out-modal button {
+        height: 50px;
+        width: auto;
+        font-size: 15px;
+    }
+
+    .landing-page--container{
+        background: rgb(183,195,233);
+        background: linear-gradient(90deg, rgba(183,195,233,.5) 0%, rgba(250,250,250,0.4822303921568627) 50%, rgba(183,195,233,.5) 100%);
+        height: 100%;
+        min-height: 100%;
+        width: 100%;
+        min-width: 100%;
+        margin: 0;
     }
 }

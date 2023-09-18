@@ -98,7 +98,7 @@ const Auth = () => {
     //console.log(user.errorMessage)
     //console.log(randomCity)
    return (
-    <>
+<div className="landing-page--container">
    <div className="login-page--container">
         {toggleForm ?
         <form 
@@ -183,14 +183,14 @@ const Auth = () => {
         </form>    
     }
     {toggleForm ?
-    <p>Have an account? Click <u className="toggle-link" onClick={toggleForms}>here</u> to Log in.</p>
+    <p>Have an account? Click <u className="toggle-link" onClick={toggleForms}>Here</u> to Log in.</p>
     :
-    <p>Need an account? Click <u className="toggle-link" onClick={toggleForms}>here</u> to make one.</p>
+    <p>Need an account? Click <u className="toggle-link" onClick={toggleForms}>Here</u> to make one.</p>
 }
     {inputs.errorMessage || user.errorMessage ? <p className="error-message">{inputs.errorMessage || user.errorMessage}</p> : ""}
     
     <p>
-        Forgot password? Click <Link to="/recovery"> <u>here</u></Link> to reset it.
+        Forgot password? Click <Link to="/recovery"> <u>Here</u></Link> to reset it.
     </p>
 
     </div>
@@ -216,7 +216,7 @@ const Auth = () => {
         </p>
     </div>
     }
-</>
+</div>
 
     )
 }

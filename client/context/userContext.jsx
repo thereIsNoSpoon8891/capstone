@@ -68,8 +68,8 @@ const UserContextProvider = props => {
     const changeName = newUserName => {
         iAxios.patch("/api/auth/manage/changeName", newUserName)
             .then(res => {
-                console.log(res)
-                logout()
+                //console.log(res)
+
             })
             .catch(err => handleError(err.response.data.errorMessage))
     }
@@ -77,8 +77,8 @@ const UserContextProvider = props => {
     const changePassword = newPassword => {
         iAxios.patch("/api/auth/manage/changePassword", newPassword)
             .then(res => {
-                console.log(res)
-                logout()
+                //console.log(res)
+
             })
             .catch(err => handleError(err.response.data.errorMessage))
     }
