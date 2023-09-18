@@ -5,10 +5,14 @@ import { Link } from 'react-router-dom'
 
 
 const Settings = () => {
+
+    const handleTheme = () => {
+        alert("Theme feature coming Soon!")
+    }
     return(
         <div className="settings--container">
         <ul className="settings--ul">
-            <li>
+            <li onClick={handleTheme}>
                 Change Theme 
             </li>
             <Link to='/changename'>
