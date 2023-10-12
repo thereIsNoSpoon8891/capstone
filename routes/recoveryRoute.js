@@ -46,7 +46,9 @@ recoveryRoute.route("/forgot-password")
 
 recoveryRoute.patch('/password-reset/:token', async (req, res, next) => {
     try{
-
+// Need async/await here, BECAUSE I am NOT using mongoose methods
+// most mongoose methods are already asyncronous 
+//bcrypt needs async/await AND async/await needs try catch block
         const {password} = req.body
         const hashedPassword = await bcrypt.hash(password, 10);
         const decodedToken = jwt.verify(req.params.token, process.env.SECRET);

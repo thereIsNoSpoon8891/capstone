@@ -4,6 +4,7 @@ import App from './App.jsx'
 import { BrowserRouter as Router } from 'react-router-dom'
 import { UserContextProvider } from '../context/userContext.jsx'
 import { LocationsContextProvider } from '../context/locationsContext.jsx'
+import { ThemeContextProvider } from '../context/themeContext.jsx'
 import './app.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -11,7 +12,11 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <Router>
           <UserContextProvider>
             <LocationsContextProvider>
-              <App />
+              <ThemeContextProvider>
+
+                      <App />
+
+              </ThemeContextProvider>
             </LocationsContextProvider>
           </UserContextProvider>
     </Router>

@@ -94,9 +94,7 @@ const Auth = () => {
         return cleanUp
 
     }, [])
-    //console.log(inputs)
-    //console.log(user.errorMessage)
-    //console.log(randomCity)
+  
    return (
 <div className="landing-page--container">
    <div className="login-page--container">

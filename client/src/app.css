@@ -182,6 +182,7 @@ button{
 }
 .header--container {
     background-image: url('../images/mainSky.jpg');
+    /* background-image: url('../images/night-sky1.jpg'); */
     background-repeat: no-repeat;
     background-size:cover;
     padding-top: 20px;
