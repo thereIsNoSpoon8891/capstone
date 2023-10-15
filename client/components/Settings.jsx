@@ -1,14 +1,22 @@
+import { useEffect, useContext } from 'react'
 import { Link } from 'react-router-dom'
-
+import { UserContext } from '../context/userContext'
 
 
 
 
 const Settings = () => {
 
+    const { resetError } = useContext(UserContext)
+
+    useEffect(() => {
+        resetError()
+    }, [])
+
     const handleTheme = () => {
         alert("Theme feature coming Soon!")
     }
+
     return(
         <div className="settings--container">
         <ul className="settings--ul">
