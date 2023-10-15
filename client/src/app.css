@@ -24,6 +24,7 @@ button{
     display: flex;
     flex-direction: column;
     width: 400px;
+    align-items: center;
 }
 
 .reset-container{
@@ -97,6 +98,7 @@ button{
 
 .auth--buttons{
     height: 50px;
+    width: 210px;
     font-size: 20px;
     border: none;
 }
@@ -596,6 +598,7 @@ button{
         font-size: 20px;
         border: solid black 1px;
         border-radius: 5px;
+
     }
     
     .rando-city-container{
