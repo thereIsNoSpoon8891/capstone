@@ -28,7 +28,7 @@ const { logout, token } = useContext(UserContext)
                 </Link>
                 <Link to="/settings">
                     <h1 className='mobile-nav-divider'>
-                        Settings
+                        Manage Account
                     </h1>
                 </Link>
 

@@ -290,6 +290,7 @@ button{
     grid-row: 2/3 ;
     margin: auto;
     font-size: 20px;
+    margin-left: 5px;
     
 }
 
@@ -445,6 +446,7 @@ button{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    text-align: center;
 }
 
 .delete--modal-button{
